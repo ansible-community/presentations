@@ -24,15 +24,7 @@ This repository adheres to the following principles:
 ## How to contribute
 
 We are very happy to receive presentations from the Ansible community that you want to share.
-
-To add a new presentation:
-
-1. Convert your presentation into a sharable PDF format.
-2. Create a ``<year>`` directory if it does not already exist.
-3. Add a subfolder for the event and date if there are multiple presentations (for example, ``community-day-2023.05``).
-4. Alternately, for one presentation, add a ``general`` subdirectory if it does not already exist
-5. Add your presentation with a descriptive filename so others can get a general understanding of 
-what the presentation is about.
+See the [main README](README.md) for steps to add a new presentation to this repository.
 
 Please use a GitHub pull request to submit your contributions. If you have a
 question or are unsure if a contribution is wanted, please join us at:
