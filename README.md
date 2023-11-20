@@ -20,3 +20,8 @@ what the presentation is about.
 * See [ansible-community/meetups](https://github.com/ansible-community?q=meetup&type=all&language=&sort=) 
 for presentations related to Ansible meetups.
 * See [ansible/community/meetings](https://github.com/ansible/community/tree/main/meetings/contributor_summits)  and [ansible/community/decks](https://github.com/ansible/community/tree/main/decks)for older presentations.
+
+## Contributing to this repository
+
+See the [Contributing guide](CONTRIBUTING.md) and the 
+[Ansible Community Code of Conduct](https://docs.ansible.com/ansible/latest/community/code_of_conduct.html).
