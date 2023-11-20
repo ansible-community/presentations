@@ -23,29 +23,39 @@ This repository adheres to the following principles:
 
 ## How to contribute
 
-We are very happy to receive contributions from the community in any form!
+We are very happy to receive presentations from the Ansible community that you want to share.
+
+To add a new presentation:
+
+1. Convert your presentation into a sharable PDF format.
+2. Create a ``<year>`` directory if it does not already exist.
+3. Add a subfolder for the event and date if there are multiple presentations (for example, ``community-day-2023.05``).
+4. Alternately, for one presentation, add a ``general`` subdirectory if it does not already exist
+5. Add your presentation with a descriptive filename so others can get a general understanding of 
+what the presentation is about.
 
 Please use a GitHub pull request to submit your contributions. If you have a
-question or are unsure if a contribution is wanted, please join us in
-[TBD](#channel-name-here) on Matrix to discuss your change or on the Ansible forum 
-using the TBD tag if you prefer async discussion. 
-Open a GitHub issue to report bugs or request features.
+question or are unsure if a contribution is wanted, please join us at:
+
+* [#community:ansible.com](https://matrix.to/#/#community:ansible.com) on Matrix to discuss your change 
+* [Ansible community forum](https://forum.ansible.com/tags/c/project/7/community) using the #community tag. 
+
 
 ## Governance
 
-The Ansible PROJECTNAME uses the following governance model:
+The Ansible presentations repository uses the following governance model:
 
 ---
-- A patch SHOULD have a minimum of 2 reviews from Members before it is merged.
-- Members SHOULD NOT review/merge their own patches except in exceptional
+- You can use the material in any presentation for your own presentation, but do give credit
+to the original author.
+- Do not edit someone else's presentation, except for grammar/spelling or other inconsistencies.
+- A PR SHOULD have a minimum of 2 reviews from Members before it is merged.
+- Members SHOULD NOT review/merge their own PRs except in exceptional
   cases.
 ---
 - All Contributions MUST be done using the GitHub PR process.
 - Any Contributor MAY submit any patches they feel are suitable for inclusion.
 - Any Contributor MAY review the patches of other Contributors. 
-- Any Contributor who makes correct patches, writes good reviews, who clearly
-  understands the project goals, and the process SHOULD be invited to become a
-  Member of the WWG.
 ---
 
 (inspired by the [C4 process](https://rfc.zeromq.org/spec/42))
