@@ -8,7 +8,7 @@ A GitHub repository of sharable presentations on Ansible projects for community 
 
 To add a new presentation:
 
-1. Convert your presentation into a sharable PDF format.
+1. Where possible, convert your presentation into a sharable PDF format. See [revealjs to PDF](https://revealjs.com/pdf-export/) if your presentation uses revealjs.
 2. Create a ``<year>`` directory if it does not already exist.
 3. Add a subfolder for the event and date if there are multiple presentations (for example, ``community-day-2023.05``).
 4. Alternately, for one presentation, add a ``general`` subdirectory if it does not already exist
