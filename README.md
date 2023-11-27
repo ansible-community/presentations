@@ -14,6 +14,7 @@ To add a new presentation:
 4. Alternately, for one presentation, add a ``general`` subdirectory if it does not already exist
 5. Add your presentation with a descriptive filename so others can get a general understanding of 
 what the presentation is about.
+6. Optionally, add the source of your presentation if you want to share it for reuse by others.
 
 ## Meetups and older community presentations
 
