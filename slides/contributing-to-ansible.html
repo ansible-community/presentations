@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Contributing to Ansible - Ansible Community</title>
+
+    <link rel="stylesheet" href="js/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="css/theme/ansible.css">
+    <link rel="stylesheet" href="js/reveal.js/plugin/highlight/monokai.css">
+  </head>
+  <body>
+  <div class="ans-mark">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-449 450 125 125" style="enable-background:new -449 450 125 125;" xml:space="preserve">
+      <g id="XMLID_3_">
+        <circle id="XMLID_7_" class="circle" cx="-386.5" cy="512.5" r="62"/>
+        <path id="XMLID_4_" class="a-mark" d="M-356.9,537.1l-24.7-59.4c-0.7-1.7-2.1-2.6-3.9-2.6c-1.7,0-3.2,0.9-4,2.6l-27.1,65.2h9.2 l10.7-26.9l32,25.9c1.3,1,2.2,1.5,3.4,1.5c2.4,0,4.6-1.8,4.6-4.5C-356.5,538.5-356.6,537.8-356.9,537.1z M-385.4,488.4l16.1,39.6 l-24.2-19L-385.4,488.4z"/>
+      </g>
+    </svg>
+  </div>
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- Slides content in markdown format -->
+        <section data-markdown
+                 data-separator="^---$"
+                 data-separator-vertical="^--$"
+                 data-separator-notes="^Note:">
+          <script type="text/template">
+# Contributing to Ansible
+
+[docs.ansible.com/ansible/latest/community](https://docs.ansible.com/ansible/latest/community)
+
+[ansible.github.io/community/decks/](https://ansible.github.io/community/decks/) - press "s" for speaker notes
+
+Note: Thank you for taking the time to learn about contributing to Ansible. This presentation is recorded and will be shared along with these slides from the URL on screen. Please keep the questions coming - we hope for this to be interactive.
+
+---
+
+## Who am I?
+
+```yaml
+- name: Community Presenter
+  title: Ansible Community Member
+  org: Ansible Community
+  roles:
+    - community
+    - contributor
+  matrix: ansible.im
+  github: ansible-community
+```
+
+Note: Welcome everyone to this session about contributing to Ansible. This presentation covers how you can get involved in the Ansible community. Whether you're new to Ansible or an experienced user, there are ways to contribute. We'll cover different types of contributions and how to get started. Questions are welcome throughout the presentation.
+
+---
+
+## THE ANSIBLE COMMUNITY
+
+The humans who get involved, even once, make us stronger
+
+We will cover:
+
+1. Scale and skill set - what _you_ can bring
+2. Opportunities to help
+3. Issue & PR workflow
+4. How to review PRs
+5. How to join the conversation and shape the future
+
+Note: Everybody joining in today knows things that can help us improve, share that knowledge. Aiming to show you the next steps you can take. Briefly cover a few topics, and show where to get further info. Again, please use the chat and Q&A features if available.
+
+---
+
+## Community Documentation
+
+[docs.ansible.com/ansible/latest/community](https://docs.ansible.com/ansible/latest/community)
+
+Note: A lot of what we will go through today is explained in more detail on here. Notice this is the /latest/ documentation. Again, we will send out video and slides. Talk through the sections, grouped by persona/activity. Show maillist/Matrix page /communication.html. So now we know where the docs are, let's first clear some of the myths.
+
+---
+
+## Myth #1: I can't contribute because I'm not a programmer.
+
+- Can't code (in Python)? No problem!
+  - Module docs are YAML - You know YAML.
+  - Testing a change doesn't (necessarily) require you to understand _how_ it works.
+  - Anyone can confirm bug reports & fixes.
+
+Note: One of the biggest myths
+
+---
+
+## Myth #2: I'm brand new to Ansible, I can't contribute.
+
+- Think you have no knowledge to share? Think again!
+  - New users can tell us how well the documentation is working.
+  - Provide feedback test, review, report bugs.
+  - If you're new to Ansible, you have fresh eyes - keep us honest.
+
+Note: Once you've learned something, it's hard to remember how you thought before you learned it. So new users are a vital link in the documentation chain. If you're learning Ansible and you find something confusing, that's important information. I guarantee you're not the only one. You can help make the documentation better, for yourself and for the next new person. Soon enough, you'll be an experienced Ansible user, and you'll need someone else to remind you what it was like to learn. See something confusing, Fix it there and then, Edit on GitHub.
+
+---
+
+## Myth #3: I don't know Git or GitHub, I can't contribute.
+
+- Scared of source control? Fear not!
+  - On docs.ansible.com, use "Edit on GitHub".
+  - This lets you edit directly from GitHub.com.
+  - GitHub provides guided editing and review tools.
+
+Note: If you don't work with git on a daily basis, it can be intimidating to fork a repo, create a branch, commit a change, and open a pull request. Fortunately, for docs changes, GitHub can do most of the work for you. Contributing is a good way to learn Git & GitHub. Demo - We can see just how easy this is. Lots of people have issues rebasing, Bot will help you.
+
+---
+
+## Myth #4: Writing tests is difficult.
+
+- Integration tests for Ansible are just Playbooks.
+- Extending a test case is generally fairly straightforward.
+- Testing gives us confidence to merge PRs, helps stop regressions.
+
+---
+
+## Myth #5: I need to make a commitment
+### one contribution and I'm stuck with support forever.
+
+- Drive-by contributions are welcome!
+  - Fix a bug.
+  - Add a test case.
+  - Clarify documentation.
+- When adding new modules we do look for some ongoing support.
+
+Note: No throwing over the wall. Also applies to WG, talk more later.
+
+---
+
+## Myths: Proof
+
+Note: [Gundalow's first PR](https://github.com/ansible/ansible/pull/4947/files) [2nd](https://github.com/ansible/ansible/pull/6826/files). If you look at some of my first PRs, you can see me failing to get a clean PR after not rebasing correctly.
+
+---
+
+## Scaling: The power of Community
+
+- Together, we make Ansible awesome.
+  - Some of us know very little.
+  - Some of us know lots of things.
+  - Collectively we know everything.
+- Ansible is an ecosystem, and every developer and user has a part to play.
+- Getting involved allows **you** to set direction.
+
+Note: The Ansible community is awesome... generous, engaged, knowledgeable, supportive. Individually, we may know a little or a lot. But collectively, we know everything about Ansible.
+
+---
+
+## Scaling: The power of Community
+
+![Community Contributions](images/community_contributions_bubbleplot.png)
+
+Note: We can clearly see how amazing and varied the community is
+
+---
+
+## Scaling: The power of Community
+
+![Community Meetup and PRs](images/community_meetup_and_prs_Jan2020.png)
+
+Note: Blue circles = Meetup members. Green = Number of PRs
+
+---
+
+## Scaling: The power of Community
+
+**Community** is the **force multiplier**.
+
+**You** are the **community**.
+
+Note: We are a friendly and welcoming community.
+
+---
+
+# Collections
+
+---
+
+## Collections
+
+- Monorepo (github/ansible/ansible) -> ansible-core + independent collections
+- Can be released independently of ansible-core and Ansible
+- Own (GitHub, GitLab, etc) repository
+- Dedicated backlog, no more shared massive issue & PR backlog
+- Should still have CI testing and in many cases can be tested more thoroughly
+
+Note: Hopefully you all some some of AnsibleFest videos over the previous two days, so I'll not spend long on this
+
+---
+
+## Collections: Community
+
+[github.com/ansible-collections](https://github.com/ansible-collections)
+
+| aws | awx | azure |
+|-----|-----|-------|
+| crypto | digitalocean | general |
+| grafana | kubernetes | libvirt |
+| mongodb | mysql | netcommon |
+| network | posix | proxysql |
+| rabbitmq | skydive | vmware |
+| windows | zabbix | |
+
+- Dedicated repository
+- Own Working Group
+
+Note: Hopefully you all some some of AnsibleFest videos over the previous two days, so I'll not spend long on this
+
+---
+
+## List of collections
+
+Popular collections available on Ansible Galaxy:
+
+| amazon.aws | ansible.netcommon | ansible.posix |
+|------------|-------------------|---------------|
+| ansible.windows | arista.eos | awx.awx |
+| azure.azcollection | check_point.mgmt | chocolatey.chocolatey |
+| cisco.* | cloudscale_ch.cloud | cyberark.* |
+| dellemc.os* | f5networks.f5_modules | fortinet.* |
+| frr.frr | gluster.gluster | google.cloud |
+| hetzner.hcloud | ibm.qradar | infinidat.infinibox |
+| junipernetworks.junos | mellanox.onyx | netapp.* |
+| netbox.netbox | ngine_io.* | openstack.cloud |
+| openvswitch.openvswitch | ovirt.ovirt | purestorage.* |
+| servicenow.servicenow | splunk.es | theforeman.foreman |
+| vyos.vyos | wti.remote | |
+
+Note: Hopefully you all some some of AnsibleFest videos over the previous two days, so I'll not spend long on this
+
+---
+
+## Demo
+
+[github.com/ansible-collections](https://github.com/ansible-collections)
+
+[github.com/ansible-collections/community.mysql](https://github.com/ansible-collections/community.mysql)
+
+[github.com/ansible-collections/community.general](https://github.com/ansible-collections/community.general)
+
+Note: README.md, plugins directory, PRs, Issues: Pinboard, release plan, pick something to look at
+
+---
+
+## Pause for questions
+
+---
+
+# GitHub Issues and PRs
+
+---
+
+## GitHub Issues and PRs
+
+- GitHub Issues/PRs . . . or it never happened.
+- **Issues**
+  - Issues capture bug reports and feature ideas.
+  - Use for details and discussion before implementation begins.
+  - Remember that users often find issues when troubleshooting - include error messages and workarounds.
+- **Pull Requests (PRs)**
+  - PRs contain actual changes.
+  - Create a feature branch for each change.
+  - Improve a one thing: Fix a bug **or** add a feature.
+- If you know the fix, no need to create an issue, just create a PR.
+- GitHub resources: [lab.github.com](https://lab.github.com), [guides.github.com](https://guides.github.com)
+
+Note: How everything is tracked. Mail lists, Twitter, etc are good for discussion. Though unless it ends up in GitHub it will not be done. Not for discussion, use the email lists, Matrix, stack overflow, for that. Remember /communication.html we showed earlier. Bugs cannot be triaged without steps to reproduce + details on expected / actual results.
+
+---
+
+## Ansible's Development Process
+
+1. Triage
+2. Cycle: Fix tests, get reviews, address review comments
+3. Merged
+4. Backport bug fixes [optional]
+
+Note: Showing PR process. Issues is similar, though simpler. PRs often get stuck due to lack of reviews.
+
+---
+
+## Development Process: PR Life Cycle Demo
+
+Note: [#46151](https://github.com/ansible/ansible/pull/46151). Description. Labels: Added by Bot, scale & search, explain each of them. Maintainers pinged. Details of manual testing: (1st Nov 2018). Review Cycle: Back and forth to fix issues. Every one should be willing to do review, so lets talk about how to find PRs and review them.
+
+---
+
+## Pause for questions
+
+---
+
+## Development Process: Aims of reviews
+
+- Anyone can review PRs.
+- User feedback from everybody.
+- Community reviews give us confidence to merge community code.
+- Working groups & [Big PR Review days](https://github.com/ansible/community/issues/407)
+- PR backlog keeps growing due to lack of reviews.
+
+Note: Previously mentioned, any skill set can help. Community [PR review days](https://github.com/ansible/community/issues/407), 2019-02-21. First point sums up why PRs don't get merged. Testing (manual/automated) gives us confidence.
+
+---
+
+## Development Process: Types of review
+
+Whatever your skill set, you can help with at least one of these:
+
+1. Documentation reviews
+2. Functional reviews
+3. Code reviews
+
+Note: One thing I think is often overlooked here is that you don't need to be a programmer, or have any understanding of the internals to do a functional or documentation review. We know the "how to review" parts of Ansible's Docs need some work, what would you like to see there? - give comments in Chat or join in #ansible-community. I accept some of this is subjective, so we are looking for a net improvement.
+
+---
+
+## Reviews #1: Functional Reviews
+
+- Does the change work?
+- Address a use case you have?
+- Break any edge case or use case you have?
+- Is the interface clear?
+
+---
+
+## Reviews #2: Documentation Reviews
+
+- Are the docs clear?
+- Do the examples work?
+- Is there any ambiguity?
+- Is there any missing knowledge?
+- Feedback on docs from newer users is really important!
+
+---
+
+## Reviews #3: Code Reviews
+
+- Does the code honor Ansible's coding guidelines?
+- Does the code make the best use of existing APIs?
+- Does it follow the "the Ansible way" (variable names, etc.)?
+- Does it follow the CRUD principles (Create, Read, Update, Delete)?
+
+---
+
+## Development Process: How to review
+
+- **Three part review:**
+  1. Is the idea behind the contribution sound?
+  2. Is the contribution architected correctly?
+  3. Is the contribution polished?
+- **Be mindful:**
+  - Go above and beyond to promote a collaborative and respectful community.
+  - Avoid bikeshedding. Ansible's coding guidelines are already enforced by CI.
+  - Make comments that invite discussion, not argument: "Would this be clearer if...?"
+
+Note: Reviewing PRs is one of the most beneficial things to do. Blog: [The Gentle Art of Patch Review](https://sage.thesharps.us/2014/09/01/the-gentle-art-of-patch-review/). contribution sound? - Clear, consistent user interface. polished? - Docs, Tests, etc. Mindful. We know the "how to review" parts of Ansible's Docs need some work, what would you like to see there? - give comments in Chat or join the discussion in #ansible-community.
+
+---
+
+## Working Groups: List
+
+- [github.com/ansible-collections](https://github.com/ansible-collections): Every repo is a WG
+- Cross functional: Community, Core, Documentation, Testing
+- Cloud Providers and VMs: AWS, Azure, Docker, Linode, VMware
+- Network
+- Operating Systems: AIX, BSD, HP-UX, Linux, Solaris, Windows
+- Related projects: ansible-lint, AWX (Automation Platform), Galaxy, Molecule
+- Plus many more...
+- Full list: [github.com/ansible/community/wiki](https://github.com/ansible/community/wiki)
+
+Note: [github.com/ansible/community/wiki](https://github.com/ansible/community/wiki). We've mentioned this a few times, but what are they? Some are cross-functional: Core, Community, Docs, Testing. Mention **each** WG one by one, saying what they are working on/achieved.
+
+---
+
+## Working Groups: Purpose
+
+Are you willing to help advance the thing that is obviously stuck and needs people united in order to get unstuck? Working groups:
+
+- Empower users.
+- Help build communities.
+- Focus effort on a specific topic.
+- Allow people closer to the technology to set direction.
+- Make Ansible do what **you** want, solve **your** challenges.
+
+Note: We've mentioned Working Groups a few times, but what are they? Distributed across the globe, like Ansible's Core Team. We are looking for people interested in making/helping build communities around technologies, as Ansible is huge, it's impossible to leave this up to one person, or a core Ansible team.
+
+---
+
+## Working Groups: How?
+
+- Require a mix of skill sets.
+- No regular commitment required.
+- May be spread across the globe.
+- Communicate via GitHub Issues/PRs/Wiki.
+- May also have a dedicated Matrix channel.
+- May even have Matrix Meetings (recorded).
+- New Working Groups welcome! I can help you set one up.
+
+Note: Not asking for n-hours a week. Especially early on even a small amount of time makes a huge benefit, low hanging fruit. Feel free to message me directly, we have ideas of other groups.
+
+---
+
+## Call to action!
+
+- Join the [Ansible Forum](https://forum.ansible.com)
+- Subscribe to [The Bullhorn](https://forum.ansible.com/c/news/bullhorn/17), The Ansible Community newsletter
+- Find a local [Ansible Meetup](https://meetup.com/pro/ansible)
+- See all [Ansible events](https://forum.ansible.com/c/events/)
+- Contact the community: [Matrix](https://matrix.to/#/#social:ansible.im) | [Forum](https://forum.ansible.com)
+
+          </script>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="./js/reveal.js/dist/reveal.js"></script>
+    <script src="./js/reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="./js/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="./js/reveal.js/plugin/notes/notes.js"></script>
+    <script src="./js/reveal.js/plugin/search/search.js"></script>
+    <script src="./js/reveal.js/plugin/zoom/zoom.js"></script>
+
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+        width: "85%",
+        height: "90%",
+        transition: "fade",
+
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealZoom ]
+      });
+    </script>
+  </body>
+</html>
